@@ -1,0 +1,72 @@
+/*
+* File Name: shape.cpp
+* Assignment: Lab 3 -- Templates and Multiple Inheritance
+* Lab section: B01
+* Completed by: Al Malik Mahdivika, Soummadip Sarkar
+* Development Date: Sept 26, 2025
+*/
+
+#include "shape.h"
+#include <iostream>
+#include <cstring>
+#include <assert.h>
+
+using namespace std;
+
+    // constructor initializing values
+    Shape::Shape(double x, double y, char* name): origin(x, y) {
+        this->shapeName = new char[strlen(name) + 1];
+        strcpy(this->shapeName, name);
+    }
+
+    // copy constructor
+    Shape::Shape(const Shape& other): origin(other.getOrigin().get_x(), other.getOrigin().get_y()) {
+        this->shapeName = new char[strlen(other.shapeName) + 1];
+        assert(shapeName != 0);
+        strcpy(this->shapeName, other.shapeName);
+    }
+
+    // overload assignment operator
+    Shape& Shape::operator=(const Shape& rhs) {
+        if (this != &rhs) {
+            delete [] this->shapeName;
+            this->origin = rhs.origin;
+            this->shapeName = new char[strlen(rhs.shapeName) + 1];
+            strcpy(this->shapeName, rhs.shapeName);
+        }
+        return *this;
+    }
+
+    Shape::~Shape() {                                                            // destructor for shapeName
+        delete[] shapeName;
+    }
+
+    // getters
+    const Point& Shape::getOrigin() const {
+        return origin;
+    }
+
+    char* Shape::getName() const {                                               // return name copy to avoid memory leak
+        char* name = new char[strlen(this->shapeName) + 1];
+        strcpy(name, this->shapeName);
+        return name;
+    }
+
+    // utilities
+    void Shape::display() {
+        cout << "Shape Name: " << this->shapeName << endl;
+        this->origin.display();
+    }
+
+    double Shape::distance(Shape& other) {
+       return this->origin.distance(other.getOrigin());
+    }
+
+    static double distance(Shape& the_shape, Shape& other) {
+        return Point::distance(the_shape.getOrigin(), other.getOrigin());
+    }
+
+    void Shape::move(double dx, double dy) {
+        this->origin.set_x(this->origin.get_x() + dx);
+        this->origin.set_y(this->origin.get_y() + dy);
+    }
