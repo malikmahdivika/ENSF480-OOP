@@ -9,11 +9,12 @@ public class DoubleArrayListSubject implements Subject {
     private List<Observer> observers;
     private ArrayList<Double> data;
     
-    // constructor
+    // basic methods
     public DoubleArrayListSubject() {
         this.observers = new ArrayList<>();     // initialize observers list
         this.data = new ArrayList<>();
     }
+    
 
     // data manipulation methods
     public void addData(Double newVal) {
@@ -25,14 +26,14 @@ public class DoubleArrayListSubject implements Subject {
         notifyObservers();
     }
     public void populate(double[] populateWith) {
-        this.data.clear();
+        //this.data.clear();
         for (double num : populateWith) {
             this.data.add(num);
         }
         notifyObservers();
     }
     public void display() {
-
+        System.out.println(this.data);
     }
     
     // Observer related methods
@@ -41,7 +42,12 @@ public class DoubleArrayListSubject implements Subject {
             observer.update(this.data);
         }
     }
+    public void register(Observer ob) {
+        this.observers.add(ob);
+        this.notifyObservers();
+    }
     public void remove(Observer ob) {
         this.observers.remove(ob);
+        this.notifyObservers();
     }
 }
