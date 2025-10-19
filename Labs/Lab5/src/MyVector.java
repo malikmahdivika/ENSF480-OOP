@@ -29,12 +29,12 @@ public class MyVector<E extends Number & Comparable<E> > {
         this.sorter.performSort(storageM);
     }
     public void display() {
-        System.out.println("Items in ArrayList: ");
+        System.out.print("Items in ArrayList: ");
         for (Item<E> item : this.storageM) {
-            System.out.println(item.getItem());
-            System.out.println("    ");
+            System.out.print(item.getItem());
+            System.out.print("    ");
         }
-        System.out.println("\n");
+        System.out.print("\n");
     }
 }
 
