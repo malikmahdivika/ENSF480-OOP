@@ -1,3 +1,8 @@
+/* File: InsertionSorter.java
+ * Author: Malik Mahdivika
+ * Dev Date: Oct. 18, 2025
+ * Concrete insertion sort implementation of Sorter strategy pattern.
+*/
 import java.util.ArrayList;
 
 public class InsertionSorter<E extends Number & Comparable<E> > implements Sorter<E> {

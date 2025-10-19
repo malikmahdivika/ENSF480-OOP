@@ -1,7 +1,8 @@
-/* ENSF 480 - Lab 5 Exercise A and B
- * M. Moussavi, October 2022
- * 
- */
+/* File: Item.java
+ * Author: Malik Mahdivika, M. Moussavi
+ * Dev Date: Oct. 18, 2025
+ * Item class implementation.
+*/
 
 class Item <E extends Number & Comparable<E> >{
 	private E item;

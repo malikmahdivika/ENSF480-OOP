@@ -1,3 +1,8 @@
+/* File: BubbleSorter.java
+ * Author: Malik Mahdivika
+ * Dev Date: Oct. 18, 2025
+ * Concrete bubble sort implementation of Sorter strategy pattern.
+*/
 import java.util.ArrayList;
 
 public class BubbleSorter<E extends Number & Comparable<E> > implements Sorter<E> {
