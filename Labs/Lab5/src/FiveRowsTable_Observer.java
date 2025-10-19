@@ -18,7 +18,7 @@ public class FiveRowsTable_Observer implements Observer {
         int maxRows = 5;
         int maxCols = (int) Math.ceil((double) dataCopy.size() / maxRows);
 
-        System.out.println("Five Row Table observed change: ");
+        System.out.println("FiveRowTable observed change: ");
         for (int row = 0; row < maxRows; row++) {
             for (int col = 0; col < maxCols; col++) {
                 int index = col * maxRows + row;

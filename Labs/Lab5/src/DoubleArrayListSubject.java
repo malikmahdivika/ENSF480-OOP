@@ -44,10 +44,8 @@ public class DoubleArrayListSubject implements Subject {
     }
     public void register(Observer ob) {
         this.observers.add(ob);
-        this.notifyObservers();
     }
     public void remove(Observer ob) {
         this.observers.remove(ob);
-        this.notifyObservers();
     }
 }
