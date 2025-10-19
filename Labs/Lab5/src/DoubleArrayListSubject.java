@@ -42,8 +42,12 @@ public class DoubleArrayListSubject implements Subject {
             observer.update(this.data);
         }
     }
+    public void notifyRegister(Observer ob) {
+        ob.update(this.data);
+    }
     public void register(Observer ob) {
         this.observers.add(ob);
+        this.notifyRegister(ob);
     }
     public void remove(Observer ob) {
         this.observers.remove(ob);

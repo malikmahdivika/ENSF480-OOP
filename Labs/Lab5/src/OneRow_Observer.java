@@ -15,13 +15,13 @@ public class OneRow_Observer implements Observer {
         this.dataSubject.register(this);
     }
     public void display() {
-        System.out.println("ThreeColumnTable observed change: ");
+        System.out.println("OneRowTable observed change: ");
         for (Double dataPoint : dataCopy) {
             System.out.print(dataPoint);
             System.out.print("  ");
         }
         System.out.print("\n");
-        System.out.print("\n");
+        // System.out.print("\n");
     }
 
     // observer implementation

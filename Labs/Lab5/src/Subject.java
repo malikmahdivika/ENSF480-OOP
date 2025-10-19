@@ -6,6 +6,7 @@
 
 public interface Subject {
     public void notifyObservers();
+    public void notifyRegister(Observer ob);
     public void register(Observer ob);
     public void remove(Observer ob);
 }

@@ -29,6 +29,8 @@ public class FiveRowsTable_Observer implements Observer {
             }
             System.out.print("\n");
         }
+        System.out.print("\n");
+        System.out.print("\n");
     }
 
     // observer implementation
@@ -36,5 +38,4 @@ public class FiveRowsTable_Observer implements Observer {
         this.dataCopy = data;
         this.display();
     }
-    
 }

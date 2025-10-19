@@ -23,8 +23,10 @@ public class ThreeColumnTable_Observer implements Observer {
                 System.out.print("  ");
                 columnCount++;
             } else {
-                columnCount = 0;
+                columnCount = 1;
                 System.out.print("\n");
+                System.out.print(dataPoint);
+                System.out.print("  ");
             }
         }
         System.out.print("\n");
